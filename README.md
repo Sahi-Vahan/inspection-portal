@@ -3,6 +3,21 @@
 > **"Sahi Gaadi. Sahi Faisla."**  
 > Mobile-first Progressive Web Application designed for certified automotive mechanics & inspection specialists conducting on-site pre-purchase inspections.
 
+### 🌐 Live Production URL
+👉 **[https://sahivahan-spl.netlify.app/specialist/dashboard](https://sahivahan-spl.netlify.app/specialist/dashboard)**
+
+> **Demo Access**: The specialist login screen (`/specialist/login`) provides 1-click test specialist profiles for fast field testing and demonstration without credentials.
+
+---
+
+## 🌐 Live Deployments & Ecosystem Links
+
+| Application | Live Deployed URL | Target Users |
+| :--- | :--- | :--- |
+| **Specialist Field App** (Current) | **[sahivahan-spl.netlify.app/specialist/dashboard](https://sahivahan-spl.netlify.app/specialist/dashboard)** | Certified Automotive Mechanics & Field Technicians |
+| **Customer Portal** | **[sahivahan.netlify.app](https://sahivahan.netlify.app/)** | Used Car & Bike Buyers across India |
+| **Admin Command Center** | **[sahivahan-adminportal.netlify.app/admin/dashboard](https://sahivahan-adminportal.netlify.app/admin/dashboard)** | Dispatchers, QA Auditors, Fleet Managers, Finance Controllers |
+
 ---
 
 ## 📌 Overview
@@ -202,8 +217,13 @@ Generates an optimized, production-ready bundle in `dist/`.
 npm run preview
 ```
 
+### Netlify Deployment Configuration (SPA Reload Fix)
+This Single Page Application uses client-side routing via React Router v6. To prevent `404 Not Found` errors when users refresh or reload nested routes like `/specialist/dashboard` or `/specialist/wallet`, the project includes:
+1. `public/_redirects`: Contains `/*  /index.html  200` which Vite copies into `dist/_redirects` during build.
+2. `netlify.toml`: Contains the Netlify build settings and catch-all redirect rule to `/index.html`.
+
 ---
 
 ## 🔗 Related Applications in SahiVahan
-- [Customer Portal (`apps/customer-portal`)](../customer-portal/README.md) — Consumer booking funnel, 7-stage live tracking, and interactive vehicle health reports.
-- [Admin Command Center (`apps/admin-portal`)](../admin-portal/README.md) — Central operations hub for dispatch radar, specialist KYC vetting, report QA flags, and financial settlement.
+- [Customer Portal](https://sahivahan.netlify.app/) — Consumer booking funnel, 7-stage live tracking, and interactive vehicle health reports.
+- [Admin Command Center](https://sahivahan-adminportal.netlify.app/admin/dashboard) — Central operations hub for dispatch radar, specialist KYC vetting, report QA flags, and financial settlement.
